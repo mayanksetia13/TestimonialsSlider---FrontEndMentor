@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-image: url(/images/pattern-curve.svg);
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.slider {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* .slide--1 .slide-text {
+    order: 2;
+} */
+
+.slide-img {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 30px;
+    background-image: url(/images/pattern-bg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.slide-img img {
+    height: 100%;
+    width: 100%;
+    max-height: 450px;
+    max-width: 450px;
+    border-radius: 8px;
+}
+
+.slide-text {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-position: top left 50%;
+    background-size: 80px;
+}
+
+.testimonial-text {
+    font-weight: 300;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    color: hsl(240, 38%, 20%);
+}
+
+.author-text {
+    margin-top: 20px;
+    font-size: 0.5rem;
+    font-weight: 700;
+}
+
+.author-text span {
+    color: hsl(240, 18%, 77%);
+    font-weight: 500;
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    opacity: 100;
+}
+
+/* .slide--2 {
+    display: none;
+} */
+
+/* --------------- Slider Button Styles -----------------  */
+.buttons {
+    width: 90px;
+    height: 45px;
+    position: absolute;
+    box-shadow: -5px 10px 16px 4px #828282;
+    border-radius: 30px;
+    background-color: white;
+    overflow: hidden;
+    top: 238px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.next,
+.prev {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.next::after,
+.prev::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+.next::after {
+    background-image: url(/images/icon-next.svg);
+
+}
+
+.prev::after {
+    background-image: url(/images/icon-prev.svg);
+
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.next:hover,
+.prev:hover {
+    background-color: antiquewhite;
+}
+
+
+/* ---------- Slider Toggler ------------- */
+@media screen and (min-width: 590px) and (max-width: 829px) {
+    .buttons {
+        top: 450px;
+    }
+}
+
+@media screen and (min-width: 570px) and (max-width: 590px) {
+    .buttons {
+        top: 430px;
+    }
+}
+
+@media screen and (min-width: 530px) and (max-width: 570px) {
+    .buttons {
+        top: 400px;
+    }
+}
+
+
+
+
+/* ------------ Desktop Version ---------------- */
+
+@media screen and (min-width:830px) {
+    .slide {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .slide-text {
+        background-position: 10% top;
+        align-items: flex-start;
+    }
+
+    .slide-img {
+        margin-left: -100px;
+        z-index: -1;
+    }
+
+    .slide-img img {
+        width: 400px;
+    }
+
+    .buttons {
+        top: 415px;
+        transform: translateY(0);
+        left: calc(100% - 380px);
+    }
+}
